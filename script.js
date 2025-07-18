@@ -5,7 +5,6 @@ else if (hour < 18) greet = "Good Afternoon ☕";
 else greet = "Good Evening 🌙";
 document.getElementById("greeting").textContent = greet;
 
-let lastScrollTop = 0;
 window.onscroll = () => {
   let scrollTop = document.documentElement.scrollTop;
   let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
@@ -27,31 +26,6 @@ window.onscroll = () => {
       link.classList.add("active");
     }
   });
-
-  // Scroll animation
-  const scrollDelta = scrollTop - lastScrollTop;
-  if (Math.abs(scrollDelta) > 10) {
-    const particleCount = Math.floor(Math.abs(scrollDelta) / 20);
-    for (let i = 0; i < particleCount; i++) {
-      const size = Math.random() * 15 + 5;
-      const particle = document.createElement("div");
-      particle.classList.add("scroll-particle");
-      particle.style.width = size + "px";
-      particle.style.height = size + "px";
-      const x = Math.random() * window.innerWidth;
-      const y = scrollTop + Math.random() * window.innerHeight;
-      particle.style.left = x + "px";
-      particle.style.top = y + "px";
-      document.getElementById("mouseTrail").appendChild(particle);
-      particles.push(particle);
-
-      if (particles.length > 50) {
-        const toRemove = particles.shift();
-        if (toRemove) toRemove.remove();
-      }
-    }
-  }
-  lastScrollTop = scrollTop;
 };
 
 document.getElementById("scrollTop").addEventListener("click", () => {
@@ -149,12 +123,26 @@ document.getElementById("funFact").addEventListener("click", () => {
   alert("💡 Fun Fact: " + fact);
 });
 
-// Mouse Trail, Click, Scroll, and Form Submission
+document.getElementById("submitContact").addEventListener("click", () => {
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const message = document.getElementById("message").value;
+  if (name && email && message) {
+    alert("Thank you for your message! I'll get back to you soon.");
+    document.getElementById("name").value = "";
+    document.getElementById("email").value = "";
+    document.getElementById("message").value = "";
+  } else {
+    alert("Please fill in all fields.");
+  }
+});
+
+// Mouse Trail and Click Animation
 const mouseTrail = document.getElementById("mouseTrail");
 let particles = [];
 
 document.addEventListener("mousemove", (e) => {
-  const size = Math.random() * 15 + 5;
+  const size = Math.random() * 15 + 5; // Random size between 5px and 20px
   const particle = document.createElement("div");
   particle.classList.add("trail-particle");
   particle.style.width = size + "px";
@@ -164,7 +152,7 @@ document.addEventListener("mousemove", (e) => {
   mouseTrail.appendChild(particle);
   particles.push(particle);
 
-  if (particles.length > 50) {
+  if (particles.length > 30) {
     const toRemove = particles.shift();
     if (toRemove) toRemove.remove();
   }
@@ -172,9 +160,9 @@ document.addEventListener("mousemove", (e) => {
 
 document.addEventListener("click", (e) => {
   for (let i = 0; i < 15; i++) {
-    const size = Math.random() * 20 + 10;
+    const size = Math.random() * 20 + 10; // Random size between 10px and 30px
     const angle = (i / 15) * 2 * Math.PI;
-    const distance = Math.random() * 50 + 20;
+    const distance = Math.random() * 50 + 20; // Random distance between 20px and 70px
     const particle = document.createElement("div");
     particle.classList.add("click-particle");
     particle.style.width = size + "px";
@@ -184,32 +172,7 @@ document.addEventListener("click", (e) => {
     mouseTrail.appendChild(particle);
     particles.push(particle);
 
-    setTimeout(() => particle.remove(), 800);
-  }
-});
-
-document.getElementById("contactForm").addEventListener("submit", async (e) => {
-  e.preventDefault();
-  const form = e.target;
-  const formData = new FormData(form);
-
-  try {
-    const response = await fetch(form.action, {
-      method: "POST",
-      body: formData,
-      headers: {
-        Accept: "application/json"
-      }
-    });
-
-    if (response.ok) {
-      alert("Thank you for your message! It has been sent to adrianrusellr.tajan@gmail.com. I'll get back to you soon.");
-      form.reset();
-    } else {
-      alert("There was an issue sending your message. Please try again later.");
-    }
-  } catch (error) {
-    alert("An error occurred. Please try again later.");
+    setTimeout(() => particle.remove(), 800); // Match clickBurst duration
   }
 });
 

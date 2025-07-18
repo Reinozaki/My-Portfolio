@@ -17,7 +17,14 @@
   <nav class="fixed top-0 w-full bg-white dark:bg-gray-800 shadow-md z-40 transition-all duration-300">
     <div class="container mx-auto px-4 py-4 flex justify-between items-center">
       <div class="text-2xl font-bold text-gray-800 dark:text-white">Adrian Tajan</div>
-      <ul class="flex space-x-6">
+      <div class="md:hidden">
+        <button id="menuToggle" class="text-gray-600 dark:text-gray-300 focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+          </svg>
+        </button>
+      </div>
+      <ul id="navMenu" class="hidden md:flex md:space-x-6">
         <li><a href="#about" class="nav-link text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition">About</a></li>
         <li><a href="#skills" class="nav-link text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition">Skills</a></li>
         <li><a href="#portfolio" class="nav-link text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition">Portfolio</a></li>
@@ -28,118 +35,118 @@
     </div>
   </nav>
 
-  <header class="relative bg-gradient-to-r from-blue-900 to-indigo-900 dark:from-gray-800 dark:to-gray-900 text-white text-center py-32">
-    <img src="profile.jpg" alt="Profile Picture" class="profile-pic mx-auto mb-6 transform hover:scale-105 transition">
-    <h1 class="text-5xl md:text-6xl font-bold mb-3 animate-pulse">Adrian Rusell R. Tajan</h1>
-    <p id="greeting" class="text-2xl mb-4"></p>
-    <p class="typing text-blue-300 dark:text-blue-200 text-xl md:text-2xl">Front-End Developer & Graphics Designer</p>
-    <div class="floating-icons mt-8 flex justify-center space-x-6">
-      <a href="https://github.com" target="_blank"><img src="https://img.icons8.com/ios-filled/50/ffffff/github.png" alt="GitHub" class="hover:opacity-80 transition"></a>
-      <a href="https://linkedin.com" target="_blank"><img src="https://img.icons8.com/ios-filled/50/ffffff/linkedin.png" alt="LinkedIn" class="hover:opacity-80 transition"></a>
-      <a href="https://dribbble.com" target="_blank"><img src="https://img.icons8.com/ios-filled/50/ffffff/dribbble.png" alt="Dribbble" class="hover:opacity-80 transition"></a>
+  <header class="relative bg-gradient-to-r from-blue-900 to-indigo-900 dark:from-gray-800 dark:to-gray-900 text-white text-center py-16 md:py-32">
+    <img src="profile.jpg" alt="Profile Picture" class="profile-pic mx-auto mb-4 w-32 h-32 md:w-200 md:h-200 transform hover:scale-105 transition">
+    <h1 class="text-3xl md:text-5xl font-bold mb-2 md:mb-3 animate-pulse">Adrian Rusell R. Tajan</h1>
+    <p id="greeting" class="text-lg md:text-2xl mb-2 md:mb-4"></p>
+    <p class="typing text-blue-300 dark:text-blue-200 text-base md:text-xl md:text-2xl">Front-End Developer & Graphics Designer</p>
+    <div class="floating-icons mt-4 md:mt-8 flex justify-center space-x-4 md:space-x-6">
+      <a href="https://github.com" target="_blank"><img src="https://img.icons8.com/ios-filled/40/ffffff/github.png" alt="GitHub" class="hover:opacity-80 transition"></a>
+      <a href="https://linkedin.com" target="_blank"><img src="https://img.icons8.com/ios-filled/40/ffffff/linkedin.png" alt="LinkedIn" class="hover:opacity-80 transition"></a>
+      <a href="https://dribbble.com" target="_blank"><img src="https://img.icons8.com/ios-filled/40/ffffff/dribbble.png" alt="Dribbble" class="hover:opacity-80 transition"></a>
     </div>
   </header>
 
-  <div class="container mx-auto px-4 py-20 relative z-10">
-    <section id="about" class="mb-20">
-      <h2 class="text-4xl font-bold text-gray-800 dark:text-white mb-6">About Me</h2>
-      <p class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed animate-fade-in">I craft immersive digital experiences with modern front-end technologies and creative graphic design. My passion lies in building responsive, animated, and user-friendly interfaces that captivate and engage. Let's bring your vision to life!</p>
+  <div class="container mx-auto px-4 py-10 md:py-20 relative z-10">
+    <section id="about" class="mb-10 md:mb-20">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4 md:mb-6">About Me</h2>
+      <p class="text-base md:text-lg text-gray-600 dark:text-gray-300 leading-relaxed animate-fade-in">I craft immersive digital experiences with modern front-end technologies and creative graphic design. My passion lies in building responsive, animated, and user-friendly interfaces that captivate and engage. Let's bring your vision to life!</p>
     </section>
 
-    <section id="skills" class="mb-20">
-      <h2 class="text-4xl font-bold text-gray-800 dark:text-white mb-6">Skills</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <section id="skills" class="mb-10 md:mb-20">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4 md:mb-6">Skills</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
         <div class="skill animate-slide-in">
-          <p class="text-lg font-semibold text-gray-700 dark:text-gray-300">HTML/CSS</p>
-          <div class="progress bg-gray-300 dark:bg-gray-700 rounded-full h-4"><div class="bar bg-blue-500 dark:bg-blue-400 h-4 rounded-full" style="width: 70%"></div></div>
+          <p class="text-base md:text-lg font-semibold text-gray-700 dark:text-gray-300">HTML/CSS</p>
+          <div class="progress bg-gray-300 dark:bg-gray-700 rounded-full h-3 md:h-4"><div class="bar bg-blue-500 dark:bg-blue-400 h-3 md:h-4 rounded-full" style="width: 70%"></div></div>
         </div>
         <div class="skill animate-slide-in" style="animation-delay: 0.2s">
-          <p class="text-lg font-semibold text-gray-700 dark:text-gray-300">JavaScript</p>
-          <div class="progress bg-gray-300 dark:bg-gray-700 rounded-full h-4"><div class="bar bg-blue-500 dark:bg-blue-400 h-4 rounded-full" style="width: 65%"></div></div>
+          <p class="text-base md:text-lg font-semibold text-gray-700 dark:text-gray-300">JavaScript</p>
+          <div class="progress bg-gray-300 dark:bg-gray-700 rounded-full h-3 md:h-4"><div class="bar bg-blue-500 dark:bg-blue-400 h-3 md:h-4 rounded-full" style="width: 65%"></div></div>
         </div>
         <div class="skill animate-slide-in" style="animation-delay: 0.4s">
-          <p class="text-lg font-semibold text-gray-700 dark:text-gray-300">Graphics Design</p>
-          <div class="progress bg-gray-300 dark:bg-gray-700 rounded-full h-4"><div class="bar bg-blue-500 dark:bg-blue-400 h-4 rounded-full" style="width: 60%"></div></div>
+          <p class="text-base md:text-lg font-semibold text-gray-700 dark:text-gray-300">Graphics Design</p>
+          <div class="progress bg-gray-300 dark:bg-gray-700 rounded-full h-3 md:h-4"><div class="bar bg-blue-500 dark:bg-blue-400 h-3 md:h-4 rounded-full" style="width: 60%"></div></div>
         </div>
       </div>
     </section>
 
-    <section id="portfolio" class="mb-20">
-      <h2 class="text-4xl font-bold text-gray-800 dark:text-white mb-6">Portfolio</h2>
-      <div class="projects grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <section id="portfolio" class="mb-10 md:mb-20">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4 md:mb-6">Portfolio</h2>
+      <div class="projects grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-8">
         <div class="flip-card tilt-card" onclick="openModal('project1')" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-perspective="1000">
           <div class="flip-card-inner rounded-xl shadow-xl">
-            <div class="flip-card-front bg-white dark:bg-gray-800 p-6 rounded-xl">
-              <h3 class="text-xl font-semibold text-gray-800 dark:text-white">Login page</h3>
-              <p class="text-gray-600 dark:text-gray-300 mt-2">More Secured login page</p>
+            <div class="flip-card-front bg-white dark:bg-gray-800 p-4 md:p-6 rounded-xl">
+              <h3 class="text-lg md:text-xl font-semibold text-gray-800 dark:text-white">Login page</h3>
+              <p class="text-sm md:text-base text-gray-600 dark:text-gray-300 mt-1 md:mt-2">More Secured login page</p>
             </div>
-            <div class="flip-card-back bg-blue-600 dark:bg-blue-500 text-white p-6 rounded-xl">
-              <p>Secured login with built in OTP to prevent users for hacking.</p>
-              <a href="https://example.com/personal-website" target="_blank" class="text-blue-200 dark:text-blue-100 hover:underline mt-2 inline-block">View Live</a>
+            <div class="flip-card-back bg-blue-600 dark:bg-blue-500 text-white p-4 md:p-6 rounded-xl">
+              <p class="text-sm md:text-base">Secured login with built in OTP to prevent users for hacking.</p>
+              <a href="https://example.com/personal-website" target="_blank" class="text-blue-200 dark:text-blue-100 hover:underline mt-1 md:mt-2 inline-block">View Live</a>
             </div>
           </div>
         </div>
         <div class="flip-card tilt-card" onclick="openModal('project2')" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-perspective="1000">
           <div class="flip-card-inner rounded-xl shadow-xl">
-            <div class="flip-card-front bg-white dark:bg-gray-800 p-6 rounded-xl">
-              <h3 class="text-xl font-semibold text-gray-800 dark:text-white">Hotel Booking UI</h3>
-              <p class="text-gray-600 dark:text-gray-300 mt-2">Responsive hotel reservation interface</p>
+            <div class="flip-card-front bg-white dark:bg-gray-800 p-4 md:p-6 rounded-xl">
+              <h3 class="text-lg md:text-xl font-semibold text-gray-800 dark:text-white">Hotel Booking UI</h3>
+              <p class="text-sm md:text-base text-gray-600 dark:text-gray-300 mt-1 md:mt-2">Responsive hotel reservation interface</p>
             </div>
-            <div class="flip-card-back bg-blue-600 dark:bg-blue-500 text-white p-6 rounded-xl">
-              <p>Modern UI with interactive cards, filters, and a fully responsive mobile layout.</p>
-              <a href="https://example.com/hotel-booking" target="_blank" class="text-blue-200 dark:text-blue-100 hover:underline mt-2 inline-block">View Live</a>
+            <div class="flip-card-back bg-blue-600 dark:bg-blue-500 text-white p-4 md:p-6 rounded-xl">
+              <p class="text-sm md:text-base">Modern UI with interactive cards, filters, and a fully responsive mobile layout.</p>
+              <a href="https://example.com/hotel-booking" target="_blank" class="text-blue-200 dark:text-blue-100 hover:underline mt-1 md:mt-2 inline-block">View Live</a>
             </div>
           </div>
         </div>
         <div class="flip-card tilt-card" onclick="openModal('project3')" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-perspective="1000">
           <div class="flip-card-inner rounded-xl shadow-xl">
-            <div class="flip-card-front bg-white dark:bg-gray-800 p-6 rounded-xl">
-              <h3 class="text-xl font-semibold text-gray-800 dark:text-white">Coffee Shop</h3>
-              <p class="text-gray-600 dark:text-gray-300 mt-2">Users for online stores</p>
+            <div class="flip-card-front bg-white dark:bg-gray-800 p-4 md:p-6 rounded-xl">
+              <h3 class="text-lg md:text-xl font-semibold text-gray-800 dark:text-white">Coffee Shop</h3>
+              <p class="text-sm md:text-base text-gray-600 dark:text-gray-300 mt-1 md:mt-2">Users for online stores</p>
             </div>
-            <div class="flip-card-back bg-blue-600 dark:bg-blue-500 text-white p-6 rounded-xl">
-              <p>Interactive coffee shop for users to buy.</p>
-              <a href="https://example.com/ecommerce-dashboard" target="_blank" class="text-blue-200 dark:text-blue-100 hover:underline mt-2 inline-block">View Live</a>
+            <div class="flip-card-back bg-blue-600 dark:bg-blue-500 text-white p-4 md:p-6 rounded-xl">
+              <p class="text-sm md:text-base">Interactive coffee shop for users to buy.</p>
+              <a href="https://example.com/ecommerce-dashboard" target="_blank" class="text-blue-200 dark:text-blue-100 hover:underline mt-1 md:mt-2 inline-block">View Live</a>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="resume" class="mb-20">
-      <h2 class="text-4xl font-bold text-gray-800 dark:text-white mb-6">Resume</h2>
-      <a href="resume.pdf" class="bg-blue-600 dark:bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-700 dark:hover:bg-blue-600 transition inline-block">Download Resume PDF</a>
+    <section id="resume" class="mb-10 md:mb-20">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4 md:mb-6">Resume</h2>
+      <a href="resume.pdf" class="bg-blue-600 dark:bg-blue-500 text-white px-4 md:px-6 py-2 md:py-3 rounded-lg hover:bg-blue-700 dark:hover:bg-blue-600 transition inline-block text-base md:text-lg">Download Resume PDF</a>
     </section>
 
-    <section id="contact" class="mb-20">
-      <h2 class="text-4xl font-bold text-gray-800 dark:text-white mb-6">Contact</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <section id="contact" class="mb-10 md:mb-20">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4 md:mb-6">Contact</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
         <div class="animate-fade-in">
-          <p class="text-lg text-gray-600 dark:text-gray-300 mb-2"><strong>Email:</strong> adrianrusellr.tajan@gmail.com</p>
-          <p class="text-lg text-gray-600 dark:text-gray-300 mb-2"><strong>Phone:</strong> 09683424330</p>
-          <p class="text-lg text-gray-600 dark:text-gray-300"><strong>Location:</strong> Pasig City, Philippines</p>
+          <p class="text-base md:text-lg text-gray-600 dark:text-gray-300 mb-1 md:mb-2"><strong>Email:</strong> adrianrusellr.tajan@gmail.com</p>
+          <p class="text-base md:text-lg text-gray-600 dark:text-gray-300 mb-1 md:mb-2"><strong>Phone:</strong> 09683424330</p>
+          <p class="text-base md:text-lg text-gray-600 dark:text-gray-300"><strong>Location:</strong> Pasig City, Philippines</p>
         </div>
-        <div class="contact-form bg-white dark:bg-gray-800 p-8 rounded-xl shadow-xl animate-slide-in">
-          <input type="text" id="name" placeholder="Your Name" class="w-full p-3 mb-4 border rounded-lg dark:bg-gray-700 dark:text-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400">
-          <input type="email" id="email" placeholder="Your Email" class="w-full p-3 mb-4 border rounded-lg dark:bg-gray-700 dark:text-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400">
-          <textarea id="message" placeholder="Your Message" class="w-full p-3 mb-4 border rounded-lg dark:bg-gray-700 dark:text-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400" rows="5"></textarea>
-          <button id="submitContact" class="bg-blue-600 dark:bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-700 dark:hover:bg-blue-600 transition w-full">Send Message</button>
+        <div class="contact-form bg-white dark:bg-gray-800 p-4 md:p-8 rounded-xl shadow-xl animate-slide-in">
+          <input type="text" id="name" placeholder="Your Name" class="w-full p-2 md:p-3 mb-2 md:mb-4 border rounded-lg dark:bg-gray-700 dark:text-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400">
+          <input type="email" id="email" placeholder="Your Email" class="w-full p-2 md:p-3 mb-2 md:mb-4 border rounded-lg dark:bg-gray-700 dark:text-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400">
+          <textarea id="message" placeholder="Your Message" class="w-full p-2 md:p-3 mb-2 md:mb-4 border rounded-lg dark:bg-gray-700 dark:text-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400" rows="3 md:rows-5"></textarea>
+          <button id="submitContact" class="bg-blue-600 dark:bg-blue-500 text-white px-4 md:px-6 py-2 md:py-3 rounded-lg hover:bg-blue-700 dark:hover:bg-blue-600 transition w-full text-base md:text-lg">Send Message</button>
         </div>
       </div>
     </section>
   </div>
 
-  <footer class="bg-gray-900 dark:bg-gray-800 text-white text-center py-8 relative z-10">
-    <p id="funFact" class="cursor-pointer text-blue-400 dark:text-blue-300 hover:underline mb-4">Click for a fun fact 🎲</p>
-    <p>© 2025 Adrian Rusell R. Tajan. All rights reserved.</p>
+  <footer class="bg-gray-900 dark:bg-gray-800 text-white text-center py-4 md:py-8 relative z-10">
+    <p id="funFact" class="cursor-pointer text-blue-400 dark:text-blue-300 hover:underline mb-2 md:mb-4 text-sm md:text-base">Click for a fun fact 🎲</p>
+    <p class="text-sm md:text-base">© 2025 Adrian Rusell R. Tajan. All rights reserved.</p>
   </footer>
 
-  <div id="scrollTop" class="fixed bottom-8 right-8 bg-blue-600 dark:bg-blue-500 text-white p-4 rounded-full shadow-lg hover:bg-blue-700 dark:hover:bg-blue-600 transition hidden">⬆</div>
+  <div id="scrollTop" class="fixed bottom-4 right-4 md:bottom-8 md:right-8 bg-blue-600 dark:bg-blue-500 text-white p-2 md:p-4 rounded-full shadow-lg hover:bg-blue-700 dark:hover:bg-blue-600 transition text-sm md:text-base hidden">⬆</div>
 
   <div id="modal" class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center hidden z-50">
-    <div class="bg-white dark:bg-gray-800 p-8 rounded-xl max-w-lg w-full relative transform transition-all scale-95 animate-modal-in">
-      <span id="closeModal" class="absolute top-4 right-4 text-2xl cursor-pointer text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-gray-100">×</span>
-      <div id="modalBody" class="text-gray-800 dark:text-gray-200"></div>
+    <div class="bg-white dark:bg-gray-800 p-4 md:p-8 rounded-xl max-w-xs sm:max-w-md md:max-w-lg w-full relative transform transition-all scale-95 animate-modal-in">
+      <span id="closeModal" class="absolute top-2 md:top-4 right-2 md:right-4 text-xl md:text-2xl cursor-pointer text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-gray-100">×</span>
+      <div id="modalBody" class="text-gray-800 dark:text-gray-200 text-sm md:text-base"></div>
     </div>
   </div>
 
